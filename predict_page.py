@@ -2,15 +2,18 @@ import streamlit as st
 import pickle
 import numpy as np
 
+
 def load_module():
     with open('saved_steps.pkl', 'rb') as file:
-        data = pickle.load(file)
-    return data
+        d = pickle.load(file)
+    return d
+
 
 data = load_module()
 random_reg = data['model']
 le_country = data['le_country']
 le_edu = data['le_edu']
+
 
 def show_predict_page():
     st.title('Software Developer Salary Prediction')
